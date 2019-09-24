@@ -1,0 +1,74 @@
+﻿<Window x:Class="KansasCity311.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KansasCity311"
+        mc:Ignorable="d"
+        Title="KansasCity311" Height="623" Width="353">
+    <Grid>
+        <Label Content="First Name: " HorizontalAlignment="Left" Margin="20,25,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox Name="firstName" HorizontalAlignment="Left" Height="23" Margin="120,28,0,0" TextWrapping="Wrap" Text="Jordan" VerticalAlignment="Top" Width="190"/>
+
+        <Label Content="Last Name: " HorizontalAlignment="Left" Margin="20,50,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox Name="lastName" HorizontalAlignment="Left" Height="23" Margin="120,53,0,0" TextWrapping="Wrap" Text="Miller" VerticalAlignment="Top" Width="190"/>
+
+        <Label Content="Email Address: " HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top" Width="88"/>
+        <TextBox Name="email" HorizontalAlignment="Left" Height="23" Margin="120,78,0,0" TextWrapping="Wrap" Text="jordan.miller.p@gmail.com" VerticalAlignment="Top" Width="190"/>
+
+        <Label Content="Phone Number: " HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="97"/>
+        <TextBox Name="phoneNumber" HorizontalAlignment="Left" Height="23" Margin="120,103,0,0" TextWrapping="Wrap" Text="405-625-3791" VerticalAlignment="Top" Width="190"/>
+
+        <CheckBox Name="includeContactInfo" IsChecked="True" Content="Include contact information to this case" HorizontalAlignment="Left" Margin="53,137,0,0" VerticalAlignment="Top"/>
+        
+        <ComboBox Name="whatToReportComboBox" HorizontalAlignment="Left" Margin="120,163,0,0" VerticalAlignment="Top" Width="190">
+            <ComboBoxItem Content="Property Maintenance"/>
+            <ComboBoxItem Content="Trash"/>
+            <ComboBoxItem Content="Animals and Pets"/>
+            <ComboBoxItem Content="Trees"/>
+            <ComboBoxItem Content="General"/>
+        </ComboBox>
+        
+        <Label Content="I want to report: " HorizontalAlignment="Left" Margin="20,160,0,0" VerticalAlignment="Top" Width="97"/>
+        <RadioButton Name="gillham4323" IsChecked ="True" Content="4323 Gillham" HorizontalAlignment="Left" Margin="25,221,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="gillham4339" Content="4339 Gillham (bamboo)" HorizontalAlignment="Left" Margin="120,221,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="other" Content="Other" HorizontalAlignment="Left" Margin="270,221,0,0" VerticalAlignment="Top"/>
+        <Label Content="Incedent Address or Intersection: " HorizontalAlignment="Left" Margin="20,189,0,0" VerticalAlignment="Top" Width="185"/>
+        <Label Content="Address if other: " HorizontalAlignment="Left" Margin="20,242,0,0" VerticalAlignment="Top" Width="97"/>
+
+        <TextBox Name="addressOther" IsEnabled="{Binding ElementName=Other, Path=IsChecked}" HorizontalAlignment="Left" Height="23" Margin="120,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190"/>
+        <Label Content="Description/Concern (500 character max)" HorizontalAlignment="Left" Margin="59,270,0,0" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.716,0.654"/>
+
+        <Button Name="prefillButton" Content="Prefill" HorizontalAlignment="Left" Margin="225,299,0,0" VerticalAlignment="Top" Width="75" Click="prefillButton_Click"/>
+        <ComboBox Name="prefillDescriptionComboBox" HorizontalAlignment="Left" Margin="20,298,0,0" VerticalAlignment="Top" Width="190">
+            <ComboBoxItem Content="Bamboo"/>
+            <ComboBoxItem Content="Sidewalk"/>
+            <ComboBoxItem Content="Animals"/>
+            <ComboBoxItem Content="Gutters"/>
+            <ComboBoxItem Content="Grass"/>
+            <ComboBoxItem Content="Paint"/>
+            <ComboBoxItem Content="Limbs/Brush"/>
+            <ComboBoxItem Content="Roof"/>
+            <ComboBoxItem Content="Guard Rails"/>
+            <ComboBoxItem Content="Noxious Plants"/>
+            <ComboBoxItem Content="Vacant Dwelling"/>
+            <ComboBoxItem Content="Squatting"/>
+            <ComboBoxItem Content="Open Entrance"/>
+            <ComboBoxItem Content="Vines Fence"/>
+            <ComboBoxItem Content="Litter/Trash/Rubbish"/>
+            <ComboBoxItem Content="Retaining Wall"/>
+            <ComboBoxItem Content="Suspicious Activity"/>
+            <ComboBoxItem Content="Big Kahuna"/>
+        </ComboBox>
+
+        <RichTextBox Name="description" HorizontalAlignment="Left" Height="220" Margin="20,330,0,0" VerticalAlignment="Top" Width="300">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="130,560,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>
